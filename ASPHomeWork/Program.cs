@@ -47,12 +47,7 @@ namespace ASPHomeWork
                     con.Response.Headers["Refresh"] = "5; url=/";
                     await con.Response.WriteAsync($"The {con.Request.Path.Value} is not avalible in our site\nYou will redirect to home page in 5 second "); 
                 }
-                    
-                    
-
-                    await next(con);
-            
-                //await next(con);
+                await next(con);
             });
             
             app.MapControllers();
